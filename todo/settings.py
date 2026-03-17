@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "main",
-    "template_inheritance",
+    # "template_inheritance",
+    "stud_db",
 ]
 
 MIDDLEWARE = [
