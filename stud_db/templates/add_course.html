@@ -4,7 +4,8 @@
 <h2>Add Course</h2>
 
 <form method="POST">
-    {% csrf_token %}
+    {% csrf_token %} 
+    {% comment %} csrf_token is a security token that Django uses to protect your form from attacks {% endcomment %}
 
     <label>Course Code:</label>
     <input type="text" name="coursecode" required>
