@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Student, Course
 
 
@@ -59,3 +59,39 @@ def enrolled_list(request):
         'students': students,
         'selected_course': selected_course
     })
+    
+
+# ➕ Add Student
+def add_student(request):
+    if request.method == "POST":
+        usn = request.POST.get('usn')
+        name = request.POST.get('name')
+        sem = request.POST.get('sem')
+
+        Student.objects.create(
+            usn=usn,
+            name=name,
+            sem=sem
+        )
+
+        return redirect('students')
+
+    return render(request, 'add_student.html')
+
+
+# ➕ Add Course
+def add_course(request):
+    if request.method == "POST":
+        code = request.POST.get('coursecode')
+        name = request.POST.get('coursename')
+        credits = request.POST.get('credits')
+
+        Course.objects.create(
+            coursecode=code,
+            coursename=name,
+            credits=credits
+        )
+
+        return redirect('courses')
+
+    return render(request, 'add_course.html')
