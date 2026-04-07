@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # "main",
     # "template_inheritance",
     "stud_db",
+    "library",
 ]
 
 MIDDLEWARE = [
