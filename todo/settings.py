@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     # "main",
     # "template_inheritance",
-    "stud_db",
+    # "stud_db",
     "library",
 ]
 

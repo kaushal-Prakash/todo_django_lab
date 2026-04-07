@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Publishers{% endblock %}
+
+{% block content %}
+<h1>Publishers</h1>
+<a href="{% url 'add_publisher' %}" class="btn btn-primary mb-3">Add Publisher</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for publisher in publishers %}
+        <tr>
+            <td>{{ publisher.name }}</td>
+            <td>{{ publisher.address }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No publishers available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
