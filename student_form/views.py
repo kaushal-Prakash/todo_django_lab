@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from .forms import ProjectForm
 
-# Create your views here.
+def project_view(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'project_success_page.html')
+    else:
+        form = ProjectForm()
+    return render(request, 'project_form.html', {'form': form})

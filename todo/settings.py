@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # "template_inheritance",
     "stud_db",
     "library",
+    "student_form",
 ]
 
 MIDDLEWARE = [
